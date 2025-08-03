@@ -33,7 +33,7 @@ html, body {
         /* Никогда не превышать высоту экрана */
     text-align: center;
     margin:  2rem auto;
-    overflow-y: auto;
+    overflow: hidden;
     box-shadow: 20px 30px 20px rgba(0, 0, 0, 0.20);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
