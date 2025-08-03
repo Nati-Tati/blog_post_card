@@ -154,7 +154,7 @@ hr {
     .blog-post-card {
         max-width: 400px;
         margin: 0.5rem auto;
-        height: calc(110vh - 1rem);
+        
     }
 }
 
