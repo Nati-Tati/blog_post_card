@@ -59,7 +59,7 @@ hr {
 /* Внутренний отступ для контента */
 .post-content {
     padding: 1.5rem;
-
+    padding-bottom: 2.5rem;
 }
 
 /* Заголовок поста:
@@ -92,7 +92,7 @@ hr {
     text-decoration: none;
     color: white;
     background-color: #708090;
-    margin: 20px auto;
+    margin: 0;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
@@ -154,7 +154,7 @@ hr {
     .blog-post-card {
         max-width: 400px;
         margin: 0.5rem auto;
-        height: calc(130vh - 0.5rem);
+        height: calc(110vh - 1rem);
     }
 }
 
