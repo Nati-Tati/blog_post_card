@@ -29,16 +29,13 @@ html, body {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     max-width: 100%;
-    height: calc(110vh - 1rem);
     text-align: center;
     margin:  2rem auto;
     overflow: visible;
     box-shadow: 20px 30px 20px rgba(0, 0, 0, 0.20);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    z-index: 1000;
-   
-}
+   }
 /* Изображение поста:
    - занимает всю ширину карточки
    - нижняя рамка */
@@ -156,6 +153,7 @@ hr {
     .blog-post-card {
         max-width: 400px;
         margin: 0.5rem auto;
+        height: calc(110vh - 1rem);
     }
 }
 
