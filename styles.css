@@ -1,169 +1,136 @@
 /* ===============================
-   БАЗОВЫЕ СТИЛИ (Mobile First)
+   Base Styles (Mobile First)
    =============================== */
 
-/* Устанавливаем базовые стили для <html> и <body>:
-   - убираем отступы
-   - задаем высоту 100%
-   - устанавливаем шрифт
-   - используем flex-контейнер для центрирования контента
-*/
-
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Outfit', sans-serif;
-    background-color: #f6e8df;
+* {
+  box-sizing: border-box;
 }
 
-/* Карточка поста:
-   - белый фон
-   - скруглённые углы
-   - центрирование
-   - тень для приподнятого эффекта
-   - flex-grow: занимает доступное пространство
-   - max-width 100% (на мобильных) */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: #f6e8df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Карточка поста */
 .blog-post-card {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    max-width: 100%;
-    max-height: 100vh;
-    text-align: center;
-    margin:  2rem auto;
-    overflow: visible;
-    box-shadow: 20px 30px 20px rgba(0, 0, 0, 0.20);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-   }
-/* Изображение поста:
-   - занимает всю ширину карточки
-   - нижняя рамка */
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 100%;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение */
 .post-img {
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #2F4F4F;
-  }
-
-/* Горизонтальная линия-разделитель:
-   - светло-серая
-   - 80% ширины
-   - отступ сверху ???*/
-hr {
-    color: #ccc;
-    width: 80%;
-    margin-top: 2rem;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-bottom: 1px solid #2f4f4f;
 }
 
-/* Внутренний отступ для контента */
+/* Контент */
 .post-content {
-    padding: 1.5rem;
-    padding-bottom: 2.5rem;
+  padding: 1.5rem;
 }
 
-/* Заголовок поста:
-   - черный цвет
-   - отступ сверху и снизу
-   - центрирование */
+/* Горизонтальная линия */
+hr {
+  width: 80%;
+  margin: 2rem auto 1rem;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Заголовок */
 .post-title {
-    color: black;
-    margin: 10px 0;
-    text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 1rem 0;
 }
 
-/* Краткое описание поста:
-   - черный цвет
-   - отступ
-   - выравнивание текста по ширине */
+/* Описание */
 .post-excerpt {
-    color: black;
-    margin: 10px;
-    text-align: justify;
-
+  color: #000;
+  text-align: justify;
+  margin: 1rem 0;
+  font-size: 1rem;
 }
 
-/* Кнопка "Читать далее":
-   - без подчеркивания
-   - белый текст на сером фоне
-   - отступы и скругление
-   - фиксированная ширина */
+/* Кнопка */
 .read-more {
-    text-decoration: none;
-    color: white;
-    background-color: #708090;
-    margin: 0;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    width: 100px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #708090;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 120px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .read-more:hover {
-    background-color: #BC8F8F;
+  background-color: #bc8f8f;
 }
 
+/* ===============================
+   Media Queries
+   =============================== */
+
+/* Маленькие экраны (портрет) */
 @media (max-width: 480px) {
-    .blog-post-card {
-        margin: 2.5rem 2rem;
-        /* сверху 0, снизу 1rem, по горизонтали auto */
-    }
+  .blog-post-card {
+    margin: 1rem;
+    max-height: none;
+  }
 }
 
+/* Ландшафт с низкой высотой */
 @media (orientation: landscape) and (max-height: 480px) {
-    .blog-post-card {
-        max-height: 90vh;
-        max-width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-around;
-        padding: 0;
-        margin: 0 auto;
-    }
+  .blog-post-card {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+  }
 
-    .post-img {
-        width: 100%;
-        height: 30vh;
-        /* меньше, чем в портретной */
-        object-fit: cover;
-    }
+  .post-img {
+    height: 30vh;
+  }
 
-    .post-content {
-        padding: 1rem;
-    }
+  .post-content {
+    padding: 1rem;
+  }
 
-    .post-title {
-        font-size: 1.5rem;
-    }
+  .post-title {
+    font-size: 1.3rem;
+  }
 
-    .post-excerpt {
-        font-size: 0.9rem;
-    }
+  .post-excerpt {
+    font-size: 0.9rem;
+  }
 
-    .read-more {
-        font-size: 0.8rem;
-        padding: 6px;
-        width: 80px;
-        margin: 0 auto;
-    }
+  .read-more {
+    font-size: 0.8rem;
+    padding: 6px;
+    width: 90px;
+  }
 }
 
-/* Когда ширина экрана больше 481px (например, планшеты и выше):
-   - увеличиваем максимальную ширину карточки */
+/* Планшеты и выше */
 @media (min-width: 481px) {
-    .blog-post-card {
-        max-width: 400px;
-        margin: 0.5rem auto;
-        
-    }
-}
-
-/* Когда экран больше 768px (например, десктоп):
-   - добавляем отступы вокруг body для "воздуха" */
-@media (min-width: 768px) {
-
-    html,
-    body {
-        padding: 1rem;
-    }
+  .blog-post-card {
+    max-width: 400px;
+  }
 }
