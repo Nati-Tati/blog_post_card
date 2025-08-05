@@ -26,7 +26,7 @@ body {
   max-width: 100%;
   width: 100%;
   max-height: calc(100vh - 4rem);
-  overflow: scroll;
+  overflow-y: auto;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
